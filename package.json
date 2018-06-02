@@ -14,7 +14,13 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.17"
   },
   "scripts": {
     "build-css": "node-sass-chokidar ./src -o ./src",
