@@ -1,0 +1,13 @@
+##### Assigment 1, Rental Detail #####
+
+1. Create Rental Detail class component
+2. in render function just output text "I am detail component"
+3. Good luck have fun
+
+
+##### Assigment 2, Get Rental From Array By Id #####
+
+1. Find Rental by ID in array and send it in action
+2. Complete Reducer similiar as we did rentalsReducer
+3. Good luck have fun if you are stuck continue video and follow me
+
