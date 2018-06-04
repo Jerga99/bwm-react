@@ -11,3 +11,13 @@
 2. Complete Reducer similiar as we did rentalsReducer
 3. Good luck have fun if you are stuck continue video and follow me
 
+
+##### Assigment 3, Create Login and Register #####
+
+1. Create new folder in "components" with name "login" and inside create class component Login
+2. Create new folder in "components" with name "register" and inside create class component Register
+3. Create routes to these components -  "/login" to Login Component
+                                     -  "/register" to Register Component
+
+4. Test if Routing Works!
+5. Good luck have fun if you are stuck continue video and follow me
