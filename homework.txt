@@ -21,3 +21,28 @@
 
 4. Test if Routing Works!
 5. Good luck have fun if you are stuck continue video and follow me
+
+
+##### Assigment 4, Create Login Redux Form #####
+1. Copy file provided in resources of this lecture and paste it to "render" of  "Login.js" component;
+2. Create LoginForm.js in "login folder"
+3. In Login Form create "Email" and "Password" inputs, similiar as in Register Form
+
+NOTE: You do not need to handle validation and errors yet.
+
+4. In "Login" component create function "loginUser" and console log this data on submit form.
+5. Good luck have fun if you are stuck continue video and follow me
+
+
+##### Assigment 5, Login Redux Component #####
+
+1. Apply connect HOC to login component
+
+NOTE: Do not forget to remove first export in Login.js since we are exporting default with connect
+      In App.js fix Login import.
+
+2. Create mapStateToProps function and provide it to Login component
+3. In loginUser dispatch action login
+4. Try to login user, check network tab
+5. Good luck have fun if you are stuck continue video and follow me
+
