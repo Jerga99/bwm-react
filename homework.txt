@@ -46,3 +46,37 @@ NOTE: Do not forget to remove first export in Login.js since we are exporting de
 4. Try to login user, check network tab
 5. Good luck have fun if you are stuck continue video and follow me
 
+
+########## ASSIGNMENT 6, Create rental-search ############
+
+1. Create "RentalSearchListing" with connect inside of rental-listing folder
+2. Inside render function return same code as in RentalListing component
+3. Create simple route "/rentals/:city/homes" to component
+4. Inside of RentalSearch listing in componentWillMount get :city from url and set it to state
+   similiar as we doing in RentalDetail
+5. Display city somewhere in render function
+5. Test to navigate to this route
+6. Have fun, if you are stuck continue video and follow me.
+
+
+########## ASSIGNMENT 6, Create rental create redux form ############
+1. Create RentalCreateForm.js in "rental-create"
+2. Apply "reduxForm" HOC to it
+3. For now create just inputs for --  title, city, street, bedrooms, dailyRate since other fields are different types
+--you can create other inputs if you feel like (: - image, category, descripton, shared
+4. get values from FORM and display them after form submit.
+5. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 7, Create action to create rental ############
+1. Create new action in "actions/index.js", we do not want to dispatch action because there will be no state update
+2. send post request to "/rentals" with rental data from form
+3. Do not forget to catch error
+4. In RentalCreate.js call this action
+5. On success redirect to '/rentals' , how you redirect is up to you (withRouter or <Redirect />)
+6. On fail display errors
+7. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 8, Create Rental Manage Booking and Rental ############
+1. Create new class components "ManageBooking" and "ManageRental" in "components/manage"
+2. Display just comething on view
+3.
