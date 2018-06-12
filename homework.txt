@@ -76,7 +76,83 @@ NOTE: Do not forget to remove first export in Login.js since we are exporting de
 6. On fail display errors
 7. Have fun, if you are stuck continue video and follow me.
 
-########## ASSIGNMENT 8, Create Rental Manage Booking and Rental ############
-1. Create new class components "ManageBooking" and "ManageRental" in "components/manage"
-2. Display just comething on view
-3.
+########## ASSIGNMENT 8, Create Rental and Booking Manage Components ############
+1. Create new class components "BookingManage" and "RentalManage" in "components/rental/rental-manage" and "components/booking/booking-manage" folder
+
+2. In render function display just some h1 tag with name of component
+3. Create routing to these new components, paths should be "/rentals/manage" and "/bookings/manage"
+NOTE: Routes must be protected
+4. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 9,Get Bookings From Server ############
+1. Create new reducer and call it "booking-reducer.js"
+2. Write Initial state for this reducer: {data: [], errors: []}
+3. Inside create reducer function with name "userBookingsReducer" and specify these cases:
+        1. FETCH_USER_BOOKINGS_INIT
+        2. FETCH_USER_BOOKINGS_SUCCESS
+        3. FETCH_USER_BOOKINGS_FAIL
+  - and change bookings state according to these cases (NOTE: it is similiar to rentals reducer)
+4. Do not forget to register this reducer in "index.js"
+5. Create action creators "fetchUserBookings" and inside return function with "dispatch"
+    - before request dispatch action "fetchUserBookingsInit"
+    - make authorized GET request to "/api/v1/rentals/manage" and when you get success response
+      dispatch "fetchUserBookingsSuccess" with bookings from response
+    - if you get error dispatch "fetchUserBookingsFail" with error from response
+6. Make ManageBooking Component connected with redux and get userBookings
+7. Make just simple iteration of userBookings in render fuction and display some proprties of booking
+   like startAt, endtAt
+8. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 10,Get Rentals From Server ############
+1. Create state on "RentalManage" component : {userRentals: [], errors:[]}
+2. Create action to get user rentals, call this function "getUserRentals"
+3. send authorized GET request to "/api/v1/rentals/manage"
+4. On success just return data
+5. On errors return errors from response
+6. Call this action in "componentWillMount" in RentalManage component
+7. if you get data or errors change state of component
+NOTE: This is similiar to register action
+8. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 11,Create Booking Card ############
+
+1. Create functional "BookinCard.js" component in "booking-manage" folder
+2. Copy there layout from "BookingManage" starting div with className="col-md-4"
+3. Do not forget to send booking on prop to your functional component
+4. In "BookingManage" create function to iterate bookings and each iteration display your new "BookingCard" component
+5. Have fun, if you are stuck continue video and follow me.
+
+########## ASSIGNMENT 12,Create Rental Manage Card ############
+
+1. Create functional "RentalManageCard.js" component in "rental-manage" folder
+2. Copy there layout from "RentalManage" starting div with className="col-md-4"
+3. Replace all hardcoded informations with data from rental
+3. Do not forget to send rental on prop to your functional component
+4. In "RentalManage" create function to iterate rentals and each iteration display your new "RentalManageCard" component
+5. Create "isFetching" on your component state, before request set it to true, and on response (error, or success) to false
+6. Handle display of error just when rentals are empty and "isFetching" is false
+5. Have fun, if you are stuck continue video and follow me.
+
+
+########## ASSIGNMENT 13, Delete Rental Action ############
+1. Create function in "actions/index.js" to delete rental
+   NOTE: Do not use dispatch since we dont have redux for user rentals
+
+2. Send authorized DELETE request to '/api/v1/rentals/<rentalId>'
+3. On Success return data from respnse
+4. On Error return promise reject with errors
+
+// Optional --------------------------
+
+5. in RentalManage create function to delete Rental, inside of function call action of delete rental from actions
+6. Send this delete function as prop to "RentalManageCard"
+   NOTE: Do not forget to bind this context
+7. In "RentalManageCard" call function sent on props when user will confirm deletion
+8. Do not forget to call function with rental._id since we need id to delete rental
+9. On success response change state of component, so remove deleted rental from array of "userRentals"
+   and update state
+10. On Fail display toast message and display error
+11. Have fun, if you are stuck continue video and follow me.
+
+
+
