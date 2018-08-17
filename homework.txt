@@ -156,3 +156,74 @@ NOTE: This is similiar to register action
 
 
 
+########## ASSIGNMENT 14, Update Function ############
+1. Create "updateRental" function inside of RentalDetailUpdate.js.
+2. Inside function just console log out some text and send this function as a prop called "updateEntity" to EditableInput
+3. In EditableInput first create new button to save new changes in input
+4. Create onClick event and call function of EditableInput called "update" - create this function (:
+5. inside "update" function call function we are receiving on props "updateEntity"
+6. Test it out, when we click save now we should see our text in console log
+7. Have fun, if you are stuck continue video and follow me.
+
+
+########## ASSIGNMENT 15, Actions  ############
+1. Create 2 new types: UPDATE_RENTAL_SUCCESS, UPDATE_RENTAL_FAIL
+2. Create action creator "updateRentalSuccess" and return action with type of UPDATE_RENTAL_SUCCESS
+  and rental we are getting in argument of this function.
+3. Create action creator "updateRentalFail" and return action with type of UPDATE_RENTAL_FAIL
+  and errors we are getting back in argument of this function.
+4. Create action creator called updateRental and return function with dispatch.
+5. Use axios instance and send patch request to '/rentals/rentalId' with data we are getting from RentalDetailUpdate Component
+6. If everything went succesfuly dispatch function "updateRentalSuccess" and provide inside updatedRental
+  we are getting back from server
+7. If request failed dispatch function "updateRentalFail" and provide inside errors
+  we are getting back from server
+8. Dispatch action creator from RentalDetailUpdate component instead of console.log. You need also get id from rental and provide it to this function.
+TIP: You can send dispatch as props from RentalDetail component.
+9. Test it out see in network tab if your request was succesful.
+10. Have fun, if you are stuck continue video and follow me.
+
+
+########## ASSIGNMENT 16, Update Reducers ############
+1. Create 2 new cases in selectedRentalReducer for UPDATE_RENTAL_SUCCESS, UPDATE_RENTAL_FAIL
+2. on UPDATE_RENTAL_SUCCESS set new state with rental we are getting form actions
+3. on UPDATE_RENTAL_FAIL return new state with errors we would get from server
+NOTE: Don't forget to add errors array to initial state of rental
+4. Check redux chrome extenstion if state is correctly set
+5. Have fun, if you are stuck continue video and follow me.
+
+
+########## ASSIGNMENT 17, Reload Map ############
+1. Create 2 new action creators: "reloadMap" and "reloadMapFinish"
+2. In reloadMap return object with type: "RELOAD_MAP"
+3. In reloadMapFinish return object with type: "RELOAD_MAP_FINISH"
+4. Create new reducer rentalMapReducer and register it in index.js in reducers folder
+5. in rental Map reducer create initial state of object with one field of "isReloading"
+  and set it to false as initial value
+6. Write 2 new cases in reducer RELOAD_MAP and RELOAD_MAP_FINISH ,
+   in "RELOAD_MAP" set state of "isReloading" to true and in "RELOAD_MAP_FINISH" to false
+7. Connect our "RentalMap" component to store via connect. And create mapStateToProp function.
+8. get our isReloading from state and pass it to googleMap as prop
+9. in RentalMap component create also function to dispatch action "reloadMapFinish" and pass it as prop
+  to google map component
+
+
+
+
+10. in GoogleMapComponent in render function check for prop "isReloading" if it is true
+    call function "getGeocodedLocation"
+11. After location is loaded dont forget to call "reloadMapFinish" which we send as a prop, otherwise
+    our render function will be called over and over again
+12. Inside of our actions when we are getting updated rental inside of then function dispatch "reloadMap"
+    but first check if we are updating street or city
+13. Have fun, if you are stuck continue video and follow me.
+
+
+
+
+
+
+
+
+
+
