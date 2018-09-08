@@ -12,6 +12,7 @@
     }
   },
   "dependencies": {
+    "aws-sdk": "^2.309.0",
     "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
@@ -24,6 +25,8 @@
     "jsonwebtoken": "^8.2.1",
     "moment": "^2.22.2",
     "mongoose": "^5.0.17",
+    "multer": "^1.3.1",
+    "multer-s3": "^2.7.0",
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.2",
     "popper.js": "^1.14.3",
@@ -31,6 +34,7 @@
     "react-bootstrap-daterangepicker": "^4.1.0",
     "react-dom": "^16.4.0",
     "react-google-maps": "^9.4.5",
+    "react-image-crop": "^4.0.3",
     "react-redux": "^5.0.7",
     "react-responsive-modal": "^3.0.3",
     "react-router-dom": "^4.2.2",
