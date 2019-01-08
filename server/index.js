@@ -3,17 +3,18 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const FakeDb = require('./fake-db');
-const Rental = require('./models/rental')
+const Rental = require('./models/rental');
 const path = require('path');
 
 const rentalRoutes = require('./routes/rentals'),
       userRoutes = require('./routes/users'),
       bookingRoutes = require('./routes/bookings'),
+      paymentRoutes = require('./routes/payments'),
       imageUploadRoutes = require('./routes/image-upload');
 
 mongoose.connect(config.DB_URI).then(() => {
   if (process.env.NODE_ENV !== 'production') {
-      // const fakeDb = new FakeDb();
+    const fakeDb = new FakeDb();
     fakeDb.seedDb();
   }
 });
@@ -25,10 +26,12 @@ app.use(bodyParser.json());
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/bookings', bookingRoutes);
-app.use("/api/v1/", imageUploadRoutes);
+app.use('/api/v1/payments', paymentRoutes);
+app.use('/api/v1', imageUploadRoutes);
+
 
 if (process.env.NODE_ENV === 'production') {
-  const appPath = path.join(__dirname, '..', 'build');
+  const appPath = path.join(__dirname, '..', 'dist');
   app.use(express.static(appPath));
 
   app.get('*', function(req, res) {
