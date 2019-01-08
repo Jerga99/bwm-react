@@ -33,7 +33,6 @@ router.get('/:id/verify-user', UserCtrl.authMiddleware, function(req, res) {
     .findById(req.params.id)
     .populate('user')
     .exec(function(err, foundRental) {
-
       if (err) {
         return res.status(422).send({errors: normalizeErrors(err.errors)});
       }
@@ -41,6 +40,7 @@ router.get('/:id/verify-user', UserCtrl.authMiddleware, function(req, res) {
       if (foundRental.user.id !== user.id) {
         return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'You are not rental owner!'}]});
       }
+
 
       return res.json({status: 'verified'});
     });
@@ -54,7 +54,7 @@ router.get('/:id', function(req, res) {
         .populate('bookings', 'startAt endAt -_id')
         .exec(function(err, foundRental) {
 
-    if (err) {
+    if (err || !foundRental) {
       return res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
     }
 
@@ -165,4 +165,5 @@ router.get('', function(req, res) {
 });
 
 module.exports = router;
+
 

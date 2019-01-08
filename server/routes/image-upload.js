@@ -8,7 +8,6 @@ const singleUpload = upload.single('image');
 
 
 router.post('/image-upload', UserCtrl.authMiddleware, function(req, res) {
-
   singleUpload(req, res, function(err) {
     if (err) {
       return res.status(422).send({errors: [{title: 'Image Upload Error', detail: err.message}]});
